@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'first-my-app';
 
-  cities=[ 'Pune','Mumbai'];
+  cities=[ 'Pune','Mumbai','Nashik'];
 }
