@@ -1,8 +1,71 @@
 <span><b>{{ title }} </b>app is running!</span>
-<br><br>
+<br>
+<h1>Interpolation</h1>
+<p ngNonBindable>{{ Sheetal }} here used ngNonBindable</p> 
+<!-- <p>{{Sheetal}}</p> this gives error -->
+<hr>
+<h1>Directives</h1>
+<p>1.Structural directives - ngIf,ngFor,ngSwitch<br>2.Attribute directive - ngNonBindable<br>3.Component directive - Template</p>
+<h2>Difference between let,var,constant</h2>
+<h2>Backticks - for multople lin etemplate</h2>
+<hr>
+<h1>Array</h1>
 <b>Citiy Names</b>
 <ul>
   <li *ngFor ="let cid of cities">
     <p>City Name : {{cid}}</p>
+    <p>Using uppercase pipe : {{cid | uppercase}}</p>
   </li> 
 </ul> 
+<hr>
+<h1>Structural directives with ngStyle types,ng-template,ng-container</h1>
+<ul>
+  <li *ngFor="let mobPart of mobParts">
+    <p>
+      Mobile Part ID : <b>{{ mobPart.id }}</b>
+    </p>
+    <div [style.color]="mobPart.prodColor">
+      Mobile Part Name :
+      <b
+        ><i>{{ mobPart.name }}</i></b
+      >
+    </div>
+    <div>
+      Description : <q>{{ mobPart.description }}</q>
+    </div>
+
+    <ng-container *ngIf="mobPart.inStock != 0; then stockVal; else outOfStock">
+    </ng-container>
+
+    <ng-template #stockVal>
+      Last <mark>{{ mobPart.inStock }}</mark> Parts Available in stock now...
+    </ng-template>
+
+    <ng-template #outOfStock>
+      Out Of Stock
+    </ng-template>
+
+    <div
+      [ngStyle]="{
+        display: mobPart.canPurch === true ? 'inline-block' : 'none'
+      }"
+    >
+    </div>
+
+    <!-- ng-container  vs  ng-template -->
+
+    <!-- 
+      <div *ngIf="mobPart.inStock > 0; else outOfStock">
+      Last <mark>{{ mobPart.inStock }}</mark> Parts Available in stock now...
+    </div>
+
+    <!- - #id : templatevarible - ->
+    <ng-template #outOfStock>
+      Out of stock..!
+    </ng-template> -->
+
+    <!-- <div *ngIf="mobPart.inStock === 0">
+      Out Of Stock Now...
+    </div> -->
+  </li>
+</ul>
