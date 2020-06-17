@@ -10,6 +10,9 @@ import { BannerTwoComponent } from './layouts/banner-two/banner-two.component';
 import { ProductsComponent } from './layouts/products/products.component';
 import { BannerOneComponent } from './layouts/banner-one/banner-one.component';
 import { NavComponent } from './layouts/nav/nav.component';
+import { SimpleStyleDirective } from './directives/simple-style.directive';
+import { LaptopComponent } from './layouts/products/laptop/laptop.component';
+import { MobileComponent } from './layouts/products/mobile/mobile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { NavComponent } from './layouts/nav/nav.component';
     BannerTwoComponent,
     ProductsComponent,
     BannerOneComponent,
-    NavComponent
+    NavComponent,
+    SimpleStyleDirective,
+    LaptopComponent,
+    MobileComponent
   ],
   imports: [
     BrowserModule,
