@@ -5,10 +5,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-mob-part',
   templateUrl: './mob-part.component.html',
-  styleUrls: ['./mob-part.component.css']
+  styleUrls: ['./mob-part.component.css'],
 })
 export class MobPartComponent implements OnInit {
-
   ngOnInit(): void {
     // ngOnInit initialises component
     this.mobParts = MOBPARTS;
@@ -19,7 +18,7 @@ export class MobPartComponent implements OnInit {
     // class: Dependancy Injection -> obj init
     // constructor initialises class
     console.log('2 Constructor Block...!');
-  } 
+  }
 
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
@@ -36,7 +35,7 @@ export class MobPartComponent implements OnInit {
     console.log('5 ngAfterContentInit Block...!');
   }
 
-  mobParts : MobParts[];
+  mobParts: MobParts[];
 
   //mobParts : MobParts[] = MOBPARTS; WITHOUT LIFECYCLE HOOK I.E ngOnInit(),ngDestroy()
 
@@ -45,9 +44,17 @@ export class MobPartComponent implements OnInit {
 
     for (let mobPart of this.mobParts) {
       tot = tot + mobPart.inStock;
-      console.log('IN CALPROD');
     }
     return tot;
   }
+
+  downQuantity(mobPart) {
+    if (mobPart.quantity != 0) mobPart.quantity--;
+    else alert('Not allowed less than 0!');
+  }
+
+  upQuantity(mobPart) {
+    if (mobPart.quantity < mobPart.inStock) mobPart.quantity++;
+    else alert('Not allowed more than stock!');
+  }
 }
- 

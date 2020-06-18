@@ -26,13 +26,10 @@ import { MobPartComponent } from './layouts/products/mob-part/mob-part.component
     NavComponent,
     SimpleStyleDirective,
     LaptopComponent,
-    MobPartComponent
+    MobPartComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

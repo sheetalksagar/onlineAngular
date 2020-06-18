@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: ['./laptop.component.css']
 })
 export class LaptopComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
