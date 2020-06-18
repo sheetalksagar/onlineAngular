@@ -1,6 +1,5 @@
 import { MobParts } from './mob-parts';
-//import { MobParts } from 'src/app/layouts/products/mob-part/mob-part.component';
-//import {MobParts}
+
 export const MOBPARTS : MobParts[]=[
     { 
       id: 1001,

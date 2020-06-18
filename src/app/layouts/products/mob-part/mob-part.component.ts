@@ -9,19 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobPartComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+    // ngOnInit initialises component
+    this.mobParts = MOBPARTS;
+    console.log('1 ngOnInit Block...!');
   }
 
-  mobParts : MobParts =MOBPARTS
+  constructor() {
+    // class: Dependancy Injection -> obj init
+    // constructor initialises class
+    console.log('2 Constructor Block...!');
+  } 
 
-  // calcProd() {
-  //   let tot = 0;
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.mobParts = [];
+    console.log('3 ngOnDestroy Block...!');
+  }
 
-  //   for (let mobPart of MobParts) {
-  //     tot = tot + mobPart.inStock;
-  //   }
-  //   return tot;
-  // }
+  ngAfterViewInit() {
+    console.log('4 ngAfterViewInit Block...!');
+  }
+
+  ngAfterContentInit() {
+    console.log('5 ngAfterContentInit Block...!');
+  }
+
+  mobParts : MobParts[];
+
+  //mobParts : MobParts[] = MOBPARTS; WITHOUT LIFECYCLE HOOK I.E ngOnInit(),ngDestroy()
+
+  calcProd() {
+    let tot = 0;
+
+    for (let mobPart of this.mobParts) {
+      tot = tot + mobPart.inStock;
+      console.log('IN CALPROD');
+    }
+    return tot;
+  }
 }
+ 
