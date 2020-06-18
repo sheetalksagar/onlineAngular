@@ -1,24 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-mobile',
-  templateUrl: './mobile.component.html',
-  // styleUrls: ['./mobile.component.css']
-})
-export class MobileComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  abc = 'some text...!';
-
-  arr = ['Pune', 'Hyderabad', 'Mumbai'];
-  // console.log(arr);
-
-  mobParts = [
-    {
+import { MobParts } from './mob-parts';
+//import { MobParts } from 'src/app/layouts/products/mob-part/mob-part.component';
+//import {MobParts}
+export const MOBPARTS : MobParts[]=[
+    { 
       id: 1001,
       name: 'screen 5.5',
       description: '5.5 Screen for Moto g',
@@ -52,14 +36,3 @@ export class MobileComponent implements OnInit {
       price: 1200,
     },
   ];
-
-  calcProd() {
-    let tot = 0;
-
-    for (let mobPart of this.mobParts) {
-      tot = tot + mobPart.inStock;
-    }
-    return tot;
-  }
-}
-

@@ -12,7 +12,7 @@ import { BannerOneComponent } from './layouts/banner-one/banner-one.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { SimpleStyleDirective } from './directives/simple-style.directive';
 import { LaptopComponent } from './layouts/products/laptop/laptop.component';
-import { MobileComponent } from './layouts/products/mobile/mobile.component';
+import { MobPartComponent } from './layouts/products/mob-part/mob-part.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { MobileComponent } from './layouts/products/mobile/mobile.component';
     NavComponent,
     SimpleStyleDirective,
     LaptopComponent,
-    MobileComponent
+    MobPartComponent
   ],
   imports: [
     BrowserModule,
