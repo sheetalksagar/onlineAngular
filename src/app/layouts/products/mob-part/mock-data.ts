@@ -5,7 +5,7 @@ export const MOBPARTS: MobParts[] = [
     id: 1001,
     name: 'screen 5.5',
     description: '5.5 Screen for Moto g',
-    inStock: 5,
+    inStock: 50,
     prodColor: 'red',
     canPurch: true,
     clsVar: true,
@@ -13,12 +13,13 @@ export const MOBPARTS: MobParts[] = [
     price: 1200,
     prodImg: 'mob1.png',
     quantity: 0,
+    tmPrice:0,
   },
   {
     id: 1002,
     name: 'SCREEN 5',
     description: '5 Screen for Samsung',
-    inStock: 8,
+    inStock: 80,
     prodColor: 'green',
     canPurch: false,
     clsVar: false,
@@ -26,6 +27,7 @@ export const MOBPARTS: MobParts[] = [
     price: 1200,
     prodImg: 'mob2.png',
     quantity: 0,
+    tmPrice:0,
   },
   {
     id: 1003,
@@ -39,5 +41,6 @@ export const MOBPARTS: MobParts[] = [
     price: 1200,
     prodImg: 'mob3.png',
     quantity: 0,
+    tmPrice:0,
   },
 ];

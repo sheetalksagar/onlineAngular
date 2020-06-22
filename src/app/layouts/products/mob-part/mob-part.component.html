@@ -8,7 +8,7 @@
             <!-- <img src="{{mobPart.prodImg}}" /> -->
             <!-- <img [src]="mobPart.prodImg" /> -->
             <img src="../../../../assets/img/{{ mobPart.prodImg }}" />
-            <span class="card-title" style="color: rgba(241, 245, 10, 0.959);">{{ mobPart.name | uppercase }}</span>
+            <span class="card-title" style="color: rgba(241, 245, 10, 0.959);"><h3>{{ mobPart.name | uppercase }}</h3></span>
             <hr style="border: 1px solid gray;">
             <!-- <a class="btn-floating halfway-fab waves-effect waves-light red"
               ><i class="material-icons">add</i></a> -->
@@ -48,20 +48,26 @@
             </div>
 
             <div>
-              <p>Place Order : 
+              <p>Place Order : {{ mobPart.quantity }} <br>
                 <a
                   class="btn-floating btn-large waves-effect waves-light red"
                   (click)="downQuantity(mobPart)"
                 >
                   <i class="material-icons">remove</i>
                 </a>
-                {{ mobPart.quantity }}
+                <input (input)="catchVal($event.target.value)" [value]="mobPart.quantity" [(ngModel)]="mobPart.quantity" style="width: 50%;">
+                <!-- <input (input)="catvhVal($event.target.value)" [value]="mobPart.quantity" [(ngModel)]="mobPart.quantity"> -->
+                
                 <a
                   class="btn-floating btn-large waves-effect waves-light red"
                   (click)="upQuantity(mobPart)"
                 >
                   <i class="material-icons">add</i>
                 </a>
+              </p>
+              <p>
+                Total mobile price : {{ mobPart.tmPrice | currency: "INR" }}
+                <!-- <input [(ngModel)]="mobPart.tmPrice"> -->
               </p>
             </div>
 

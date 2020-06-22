@@ -51,10 +51,16 @@ export class MobPartComponent implements OnInit {
   downQuantity(mobPart) {
     if (mobPart.quantity != 0) mobPart.quantity--;
     else alert('Not allowed less than 0!');
+    mobPart.tmPrice=mobPart.quantity*mobPart.price;
   }
 
   upQuantity(mobPart) {
     if (mobPart.quantity < mobPart.inStock) mobPart.quantity++;
     else alert('Not allowed more than stock!');
+    mobPart.tmPrice=mobPart.quantity*mobPart.price;
+  }
+
+  catchVal(event){
+    console.log("In catch value",event);
   }
 }

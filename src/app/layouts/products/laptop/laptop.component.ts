@@ -8,5 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class LaptopComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+  laptopParts=[
+    {
+      lid:1001,
+      lname:"Lenovo",
+      lImg:"../../../../assets/img/laptop1.jpg",
+    },
+    {
+      lid:1002,
+      lname:"Dell",
+      lImg:"../../../../assets/img/laptop2.jpg",
+    },
+    {
+      lid:1003,
+      lname:"HP",
+      lImg:"../../../../assets/img/laptop3.jpg",
+    }
+  ]
 }
