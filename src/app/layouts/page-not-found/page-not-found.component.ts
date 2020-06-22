@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <h1>
   page-not-found works!
-</h1>
+  </h1>
   `, 
   styles: [
   ]
