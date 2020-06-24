@@ -1,5 +1,12 @@
 <h4 style="text-align: center;">Mobile Products...!</h4>
 <h3 style="text-align: center;">We have {{ calcProd() }} Products...!</h3>
+<mat-checkbox>Check me!</mat-checkbox>
+<mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
 <div class="row">
   <ul>
     <li *ngFor="let mobPart of mobParts">
@@ -131,5 +138,5 @@
 <div class="center">
   <a class="waves-effect waves-light btn-large" routerLink="moto" style="margin-right: 15px;">Motorola</a>
   <a class="waves-effect waves-light btn-large" routerLink="samsung">Samsung</a>
-</div>
+</div><br>
 <router-outlet></router-outlet>

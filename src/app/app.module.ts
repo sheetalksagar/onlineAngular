@@ -20,6 +20,15 @@ import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 
 import { from } from 'rxjs';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
+import { AllMaterialModule } from './modules/all-material.module';
+import { LenovoComponent } from './layouts/products/laptop/lenovo/lenovo.component';
+import { DellComponent } from './layouts/products/laptop/dell/dell.component';
+import { HpComponent } from './layouts/products/laptop/hp/hp.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +45,17 @@ import { from } from 'rxjs';
     MobPartComponent,
     PageNotFoundComponent,
     AllProdComponent,
+    LenovoComponent,
+    DellComponent,
+    HpComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule,FormsModule],
+  imports: [BrowserModule, 
+    AppRoutingModule,
+    FormsModule, 
+    BrowserAnimationsModule,
+    AllMaterialModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

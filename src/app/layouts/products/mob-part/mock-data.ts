@@ -14,6 +14,7 @@ export const MOBPARTS: MobParts[] = [
     prodImg: 'mob1.png',
     quantity: 0,
     tmPrice:0,
+    mBrand:'moto'
   },
   {
     id: 1002,
@@ -28,6 +29,7 @@ export const MOBPARTS: MobParts[] = [
     prodImg: 'mob2.png',
     quantity: 0,
     tmPrice:0,
+    mBrand:'samsung'
   },
   {
     id: 1003,
@@ -42,5 +44,6 @@ export const MOBPARTS: MobParts[] = [
     prodImg: 'mob3.png',
     quantity: 0,
     tmPrice:0,
+    mBrand:'nokia',
   },
 ];

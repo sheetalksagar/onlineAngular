@@ -6,12 +6,14 @@ import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 import { MotoComponent } from './layouts/products/mob-part/moto/moto.component';
 import { SamsungComponent } from './layouts/products/mob-part/samsung/samsung.component';
+import { MobileNavComponent } from './layouts/products/mob-part/mobile-nav/mobile-nav.component';
 
 // const routes: Routes = [];
 const appRoutes : Routes = [
   { path : "", component : MobPartComponent },
   { path : "mobile", component : MobPartComponent,children:[{path:"moto",component:MotoComponent},{path:"samsung",component:SamsungComponent}]},
   { path : "laptop", component : LaptopComponent },
+  { path : "mobNav", component : MobileNavComponent,children:[{path:"moto",component:MobPartComponent}]},
   { path : "allProds", component : AllProdComponent,children:[{path:"mobile",component:MobPartComponent,children:[{path:"moto",component:MotoComponent},{path:"samsung",component:SamsungComponent}]},{path:"laptop",component:LaptopComponent}] },
   { path : "**", component : PageNotFoundComponent }
 ];

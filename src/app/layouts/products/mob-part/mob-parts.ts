@@ -11,4 +11,5 @@ export class MobParts {
   prodImg: string;
   quantity: number;
   tmPrice:number;
+  mBrand:string;
 }
