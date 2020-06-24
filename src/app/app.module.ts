@@ -2,8 +2,8 @@ import { RouterModule ,Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { BannerThreeComponent } from './layouts/banner-three/banner-three.component';
@@ -16,13 +16,10 @@ import { SimpleStyleDirective } from './directives/simple-style.directive';
 import { LaptopComponent } from './layouts/products/laptop/laptop.component';
 import { MobPartComponent } from './layouts/products/mob-part/mob-part.component';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
+import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 
-const appRoutes : Routes = [
-  { path : "", component : MobPartComponent },
-  { path : "mobile", component : MobPartComponent },
-  { path : "laptop", component : LaptopComponent },
-  { path : "**", component : PageNotFoundComponent }
-];
+import { from } from 'rxjs';
+
 
 @NgModule({
   declarations: [
@@ -38,9 +35,10 @@ const appRoutes : Routes = [
     LaptopComponent,
     MobPartComponent,
     PageNotFoundComponent,
+    AllProdComponent,
   ],
 
-  imports: [BrowserModule, AppRoutingModule,FormsModule,RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, AppRoutingModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
