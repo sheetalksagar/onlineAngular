@@ -2,13 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-laptop-nav',
-  template: `
-    <p>
-      laptop-nav works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl : 'laptop-nav.component.html',
 })
 export class LaptopNavComponent implements OnInit {
 
