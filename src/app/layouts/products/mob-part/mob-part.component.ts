@@ -1,5 +1,6 @@
+import { ServcommonService } from './../../../services/servcommon.service';
 import { MobParts } from './mob-parts';
-import { MOBPARTS } from './mock-data';
+//import { MOBPARTS } from './mock-data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,11 +11,14 @@ import { Component, OnInit } from '@angular/core';
 export class MobPartComponent implements OnInit {
   ngOnInit(): void {
     // ngOnInit initialises component
-    this.mobParts = MOBPARTS;
+    //this.mobParts = MOBPARTS; //for servi cece
     console.log('1 ngOnInit Block...!');
+    //this.mobParts=this.servcommonService.getMobparts();
+    this.servcommonService.getMobparts().subscribe(res => this.mobParts = res);
   }
 
-  constructor() {
+  constructor(private servcommonService:ServcommonService) {
+
     // class: Dependancy Injection -> obj init
     // constructor initialises class
     console.log('2 Constructor Block...!');
@@ -42,8 +46,11 @@ export class MobPartComponent implements OnInit {
   calcProd() {
     let tot = 0;
 
-    for (let mobPart of this.mobParts) {
+    //for (let mobPart of this.mobParts) {
+    if(Array.isArray(this.mobParts)){
+      for(let mobPart of this.mobParts){
       tot = tot + mobPart.inStock;
+      }
     }
     return tot;
   }

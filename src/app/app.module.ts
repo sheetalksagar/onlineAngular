@@ -1,8 +1,9 @@
-import { RouterModule ,Routes } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layouts/footer/footer.component';
@@ -20,11 +21,13 @@ import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 
 import { from } from 'rxjs';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 //import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AllMaterialModule } from './modules/all-material.module';
+import { AllComponentModule } from './modules/all-component.module';
+
+import { ServcommonService } from './services/servcommon.service'
+
 
 @NgModule({
   declarations: [
@@ -48,8 +51,10 @@ import { AllMaterialModule } from './modules/all-material.module';
     FormsModule, 
     BrowserAnimationsModule,
     AllMaterialModule,
+    AllComponentModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [ServcommonService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
