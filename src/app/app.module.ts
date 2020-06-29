@@ -1,8 +1,8 @@
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './Modules/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -14,9 +14,9 @@ import { ProductsComponent } from './layouts/products/products.component';
 import { BannerOneComponent } from './layouts/banner-one/banner-one.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { SimpleStyleDirective } from './directives/simple-style.directive';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 import { LaptopComponent } from './layouts/products/laptop/laptop.component';
 import { MobPartComponent } from './layouts/products/mob-part/mob-part.component';
-import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 
 import { from } from 'rxjs';
@@ -40,9 +40,9 @@ import { ServcommonService } from './services/servcommon.service'
     BannerOneComponent,
     NavComponent,
     SimpleStyleDirective,
+    PageNotFoundComponent,
     LaptopComponent,
     MobPartComponent,
-    PageNotFoundComponent,
     AllProdComponent,
   ],
 
