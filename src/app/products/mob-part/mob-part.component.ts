@@ -1,4 +1,4 @@
-import { ServcommonService } from './../../../services/servcommon.service';
+import { ServcommonService } from './../../services/servcommon.service';
 import { MobParts } from './mob-parts';
 //import { MOBPARTS } from './mock-data';
 import { Component, OnInit } from '@angular/core';

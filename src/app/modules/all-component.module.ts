@@ -46,4 +46,5 @@ import { CommonModule } from '@angular/common';
     // AllProdComponent
   ],
 })
+
 export class AllComponentModule { }

@@ -15,8 +15,8 @@ import { BannerOneComponent } from './layouts/banner-one/banner-one.component';
 import { NavComponent } from './layouts/nav/nav.component';
 import { SimpleStyleDirective } from './directives/simple-style.directive';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
-import { LaptopComponent } from './layouts/products/laptop/laptop.component';
-import { MobPartComponent } from './layouts/products/mob-part/mob-part.component';
+import { LaptopComponent } from './products/laptop/laptop.component';
+import { MobPartComponent } from './products/mob-part/mob-part.component';
 import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 
 import { from } from 'rxjs';
@@ -26,7 +26,8 @@ import { from } from 'rxjs';
 import { AllMaterialModule } from './modules/all-material.module';
 import { AllComponentModule } from './modules/all-component.module';
 
-import { ServcommonService } from './services/servcommon.service'
+import { ServcommonService } from './services/servcommon.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ServcommonService } from './services/servcommon.service'
     LaptopComponent,
     MobPartComponent,
     AllProdComponent,
+    
   ],
 
   imports: [BrowserModule, 
@@ -54,7 +56,7 @@ import { ServcommonService } from './services/servcommon.service'
     AllComponentModule,
     HttpModule,
   ],
-  providers: [ServcommonService],
+  providers: [ServcommonService,AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
