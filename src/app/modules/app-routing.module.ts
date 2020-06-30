@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './../guards/auth.guard';
 
@@ -22,14 +22,17 @@ import { PageNotFoundComponent } from './../layouts/page-not-found/page-not-foun
 import { DashboardComponent } from '../admin/dashboard/dashboard.component'
 import { LoginComponent } from '../admin/login/login.component';
 
+import { DashboardNavComponent } from '../admin/dashboard/dashboard-nav/dashboard-nav.component';
+
 // const routes: Routes = [];
 const appsRoutes: Routes = [
-  { path: '', component: MobPartComponent },
+  // { path: '', component: MobPartComponent },
   
   {
     path: 'mobile',
-    component: MobPartComponent,
+    component: MobileNavComponent,
     children: [
+      { path: '', component: MobPartComponent },
       {
         path: 'moto',
         component: MotoComponent,
@@ -40,7 +43,7 @@ const appsRoutes: Routes = [
       },
     ],
   },
-  // { path: 'mobile',component: MobPartComponent,
+  // { path: 'mobile',component: MobileNavComponent,
   // children: [
   //   // { path: '', component: MobPartComponent },
   //   { path: 'moto', component: MotoComponent },
@@ -48,11 +51,11 @@ const appsRoutes: Routes = [
   //   ],},
   
     { path: 'laptop',
-      component: LaptopNavComponent,
+      component: LaptopComponent,
       children:[
-        { path: '', 
-          component: LaptopComponent,
-        },
+        // { path: '', 
+        //   component: LaptopComponent,
+        // },
         { path: 'lenovo',
           component: LenovoComponent,},
         { path:'dell',
@@ -90,6 +93,7 @@ const appsRoutes: Routes = [
     path: 'dashboard',
     canActivate: [AuthGuard],
     component: DashboardComponent,
+    children:[{path:'dashNav',component:DashboardNavComponent}]
   },
 
   { path:'login',component: LoginComponent },
