@@ -8,4 +8,13 @@ export class NavComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  logout(){
+    localStorage.removeItem('username');
+  }
+
+  isLogin() {
+    if (localStorage.getItem('username') != null) return true;
+    return false;
+  }
 }

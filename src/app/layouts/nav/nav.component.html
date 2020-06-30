@@ -34,13 +34,14 @@
           <li><a routerLink="laptop">Laptops</a></li>
           <!-- <li><a routerLink="laptopNav">Laptops Nav</a></li>
           <li><a routerLink="tab">Tabs</a></li> -->
-          <li><a routerLink="dashboard">Dashboard</a></li>
+          <!-- <li><a routerLink="dashboard">Dashboard</a></li>
           <li><a routerLink="login">Login</a></li>
-          <!-- <li *ngIf="isLogin()"><a routerLink="dashboard">Dashboard</a></li>
+          <li><a routerLink="mobile" (click)="logout()">Logout</a></li> -->
+          <li *ngIf="isLogin()"><a routerLink="dashboard">Dashboard</a></li>
           <li *ngIf="!isLogin()"><a routerLink="login">Login</a></li>
           <li *ngIf="isLogin()">
-            <a routerLink="home" (click)="logout()">LogOut</a>
-          </li> -->
+            <a routerLink="mobile" (click)="logout()">LogOut</a>
+          </li>
     
           <!-- step 6: prod.compo.html -->
         </ul>

@@ -30,7 +30,6 @@ const appsRoutes: Routes = [
     path: 'mobile',
     component: MobPartComponent,
     children: [
-      { path: '', component: MobPartComponent },
       {
         path: 'moto',
         component: MotoComponent,

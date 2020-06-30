@@ -8,7 +8,7 @@
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
-
+<div>
   <ul>
     <li *ngFor="let mobPart of mobParts">
       <div class="col s12 m4">
@@ -134,6 +134,10 @@
       </div>
     </li>
   </ul>
-
-
-<!-- <router-outlet></router-outlet> -->
+</div>
+<br>
+  <div class="center">
+    <a class="waves-effect waves-light btn-large" routerLink="moto" style="margin-right: 15px;">Moto</a>
+    <a class="waves-effect waves-light btn-large" routerLink="samsung" style="margin-right: 15px;">Samsung</a>
+  </div><br>
+  <router-outlet></router-outlet>
