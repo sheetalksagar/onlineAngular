@@ -1,22 +1,15 @@
 <h4 style="text-align: center;">Laptop Products...!</h4>
 
- <!-- <nav class="white" role="navigation">
- <div class="nav-wrapper container">
-    <a id="logo-container" href="#" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <!-- <li><a href="#">Navbar Link</a></li> -->
-      <!-- <a <a [routerLink]="[ '/path', routeParam ]">name</a> -->
-      <!-- <li><a routerLink="">Laptop Nav</a></li> - ->
-      <li><a routerLink="lenovo">Lenovo</a></li>
-      <li><a routerLink="dell">Dell</a></li>
-      <li><a routerLink="hp">HP</a></li>
-      
-    </ul>
-    
-    <ul id="nav-mobile" class="sidenav"><li><a href="#">Navbar Link</a></li></ul>
-    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  </div>
-</nav> -->
+<div class="center">
+  <mat-checkbox>Check me!</mat-checkbox>
+  <br>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
 
 <div class="row">
   <ul>
@@ -42,54 +35,31 @@
   </div>
   </li>
   </ul>
-  <!-- <div class="col s12 m4">
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="../../../assets/img/office.jpg" />
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"
-          >Card Title<i class="material-icons right">more_vert</i></span
-        >
-        <p><a href="#">This is a link</a></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"
-          >Card Title<i class="material-icons right">close</i></span
-        >
-        <p>
-          Here is some more information about this product that is only revealed
-          once clicked on.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col s12 m4">
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="../../../assets/img/office.jpg" />
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"
-          >Card Title<i class="material-icons right">more_vert</i></span
-        >
-        <p><a href="#">This is a link</a></p>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"
-          >Card Title<i class="material-icons right">close</i></span
-        >
-        <p>
-          Here is some more information about this product that is only revealed
-          once clicked on.
-        </p>
-      </div>
-    </div>
-  </div> -->
 </div>
 <div class="center">
   <a class="waves-effect waves-light btn-large" routerLink="lenovo" style="margin-right: 15px;">Lenovo</a>
   <a class="waves-effect waves-light btn-large" routerLink="dell" style="margin-right: 15px;">Dell</a>
   <a class="waves-effect waves-light btn-large" routerLink="hp">HP</a>
-</div><br>
-<router-outlet></router-outlet> 
+  <br><br>
+  <h1><router-outlet></router-outlet></h1>
+</div>
+ 
+
+ <!-- <nav class="white" role="navigation">
+ <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- <li><a href="#">Navbar Link</a></li> -->
+      <!-- <a <a [routerLink]="[ '/path', routeParam ]">name</a> -->
+      <!-- <li><a routerLink="">Laptop Nav</a></li> - ->
+      <li><a routerLink="lenovo">Lenovo</a></li>
+      <li><a routerLink="dell">Dell</a></li>
+      <li><a routerLink="hp">HP</a></li>
+      
+    </ul>
+    
+    <ul id="nav-mobile" class="sidenav"><li><a href="#">Navbar Link</a></li></ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  </div>
+</nav> -->
+

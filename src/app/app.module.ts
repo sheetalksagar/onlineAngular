@@ -30,6 +30,7 @@ import { ServcommonService } from './services/servcommon.service';
 import { AuthGuard } from './guards/auth.guard';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,6 @@ import { AuthGuard } from './guards/auth.guard';
     LaptopComponent,
     MobPartComponent,
     AllProdComponent,
-    
   ],
 
   imports: [BrowserModule, 

@@ -2,25 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-banner-two',
-  template: `
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 light">
-              A modern responsive front-end framework based on Material Design
-            </h5>
-          </div>
-        </div>
-      </div>
-      <div class="parallax">
-        <img
-          src="./../assets/img/background2.jpg"
-          alt="Unsplashed background img 2"
-        />
-      </div>
-    </div>
-  `,
+  templateUrl:'./banner-two.component.html',
   styles: [],
 })
 export class BannerTwoComponent implements OnInit {

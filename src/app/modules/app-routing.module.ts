@@ -2,6 +2,8 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './../guards/auth.guard';
 
+import { HomeComponent } from './../layouts/home/home.component';
+
 import { MobPartComponent } from './../products/mob-part/mob-part.component';
 import { MotoComponent } from './../products/mob-part/moto/moto.component';
 import { SamsungComponent } from './../products/mob-part/samsung/samsung.component';
@@ -26,13 +28,13 @@ import { DashboardNavComponent } from '../admin/dashboard/dashboard-nav/dashboar
 
 // const routes: Routes = [];
 const appsRoutes: Routes = [
-  // { path: '', component: MobPartComponent },
+  { path: '', component: HomeComponent },
   
   {
     path: 'mobile',
-    component: MobileNavComponent,
+    component: MobPartComponent,
     children: [
-      { path: '', component: MobPartComponent },
+      // { path: '', component: MobPartComponent },
       {
         path: 'moto',
         component: MotoComponent,
@@ -43,19 +45,20 @@ const appsRoutes: Routes = [
       },
     ],
   },
-  // { path: 'mobile',component: MobileNavComponent,
-  // children: [
-  //   // { path: '', component: MobPartComponent },
-  //   { path: 'moto', component: MotoComponent },
-  //   { path: 'samsung', component: SamsungComponent },
-  //   ],},
   
-    { path: 'laptop',
-      component: LaptopComponent,
+  { path: 'laptop',component: LaptopComponent,
+    children: [
+      {path:"lenovo",component:LenovoComponent},
+      {path:"dell",component:DellComponent},
+      {path:"hp",component:HpComponent}
+    ],},
+  
+    { path: 'laptopNav',
+      component: LaptopNavComponent,
       children:[
-        // { path: '', 
-        //   component: LaptopComponent,
-        // },
+        { path: '',
+        component: LaptopComponent,
+        },
         { path: 'lenovo',
           component: LenovoComponent,},
         { path:'dell',
@@ -64,6 +67,20 @@ const appsRoutes: Routes = [
         { path:'hp',
           component:HpComponent}
       ],},
+
+      {
+        path: 'dashboard',
+        canActivate: [AuthGuard],
+        component: DashboardComponent,
+        children:[
+          { 
+            path:'dashNav', component:DashboardNavComponent
+          }]
+      },
+    
+      { path:'login',component: LoginComponent },
+    
+      { path: '**', component: PageNotFoundComponent },
 
     // { path : 'laptopNav', component : LaptopNavComponent,
     // children:[
@@ -88,18 +105,6 @@ const appsRoutes: Routes = [
   //     ]},
   //   { path: 'laptop', component: LaptopComponent }
   // ]},
-  
-  {
-    path: 'dashboard',
-    canActivate: [AuthGuard],
-    component: DashboardComponent,
-    children:[{path:'dashNav',component:DashboardNavComponent}]
-  },
-
-  { path:'login',component: LoginComponent },
-
-  { path: '**', component: PageNotFoundComponent },
-
 
   //{ path: 'mobile',component: MobPartComponent,children: [{path: '',component: MobPartComponent,},{ path: 'moto', component: MotoComponent },{ path: 'samsung', component: SamsungComponent },],},
   //{ path: 'mobile',component: MobileNavComponent,children: [{path: '',component: MobPartComponent,},{path: 'moto',component: MotoComponent,},{path: 'samsung',component: SamsungComponent,}],},
