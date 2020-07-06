@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard-nav',
-  template: `
-    <p>
-      dashboard-nav works!
-    </p>
-  `,
+  templateUrl:'dashboard-nav.component.html' ,
   styles: [
   ]
 })
@@ -17,4 +13,13 @@ export class DashboardNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  superlogout(){
+    localStorage.removeItem('username');
+  }
+
+  issuperLogin() {
+    //localStorage.removeItem('username');
+    if (localStorage.getItem('username') != null) return true;
+    return false;
+  }
 }

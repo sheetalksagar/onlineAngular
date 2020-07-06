@@ -24,7 +24,10 @@ import { PageNotFoundComponent } from './../layouts/page-not-found/page-not-foun
 import { DashboardComponent } from '../admin/dashboard/dashboard.component'
 import { LoginComponent } from '../admin/login/login.component';
 
+import { SuperadminComponent } from '../admin/dashboard/superadmin/superadmin.component';
+
 import { DashboardNavComponent } from '../admin/dashboard/dashboard-nav/dashboard-nav.component';
+import { SuperAuthGuard } from '../guards/super-auth.guard';
 
 // const routes: Routes = [];
 const appsRoutes: Routes = [
@@ -32,9 +35,9 @@ const appsRoutes: Routes = [
   
   {
     path: 'mobile',
-    component: MobPartComponent,
+    component: MobileNavComponent,
     children: [
-      // { path: '', component: MobPartComponent },
+      { path: '', component: MobPartComponent },
       {
         path: 'moto',
         component: MotoComponent,
@@ -46,80 +49,77 @@ const appsRoutes: Routes = [
     ],
   },
   
-  { path: 'laptop',component: LaptopComponent,
+  { path: 'laptop',component: LaptopNavComponent,
     children: [
+      { path: '', component: LaptopComponent,},
       {path:"lenovo",component:LenovoComponent},
       {path:"dell",component:DellComponent},
       {path:"hp",component:HpComponent}
     ],},
-  
-    { path: 'laptopNav',
-      component: LaptopNavComponent,
+
+      { path: 'tab', component: TabPartComponent ,
       children:[
-        { path: '',
-        component: LaptopComponent,
-        },
-        { path: 'lenovo',
-          component: LenovoComponent,},
-        { path:'dell',
-          component: DellComponent
-        },
-        { path:'hp',
-          component:HpComponent}
-      ],},
+        { path:'iPads',component:IpadsComponent },
+      ]},
+
+    { path: 'allProds',component: AllProdComponent,
+    children: [
+      {path: 'mobile',component: MobPartComponent,
+        children: [
+          { path: 'moto', component: MotoComponent },
+          { path: 'samsung', component: SamsungComponent }
+        ]},
+        { path: 'laptop',component: LaptopNavComponent,
+        children: [
+          { path: '', component: LaptopComponent,},
+          {path:"lenovo",component:LenovoComponent},
+          {path:"dell",component:DellComponent},
+          {path:"hp",component:HpComponent}
+        ],},
+    ]},
 
       {
-        path: 'dashboard',
+        path: 'dashboardNav',
         canActivate: [AuthGuard],
-        component: DashboardComponent,
+        component: DashboardNavComponent,
         children:[
           { 
-            path:'dashNav', component:DashboardNavComponent
-          }]
+            path:'superLogin',
+            //canActivate: [SuperAuthGuard],
+            component: SuperadminComponent
+          },
+          // { path: 'dashboard', component: DashboardComponent }
+        ]
       },
-    
+
       { path:'login',component: LoginComponent },
     
+      { path : 'lazy',loadChildren:'../modules/lazy/lazy.module#LazyModule'},
+
       { path: '**', component: PageNotFoundComponent },
 
-    // { path : 'laptopNav', component : LaptopNavComponent,
-    // children:[
-    //   // {path: 'laptop',component: LaptopComponent,},
-    //   // {path:'',component:LaptopComponent},
-    //   { path:'lenovo',component: LenovoComponent },
-    //   { path:'dell',component: DellComponent },
-    //   // {path:"hp",component:HpComponent}
-    // ]},
-
-  //   { path: 'tab', component: TabPartComponent ,
-  // children:[
-  //   { path:'iPads',component:IpadsComponent },
-  // ]},
-
-  // { path: 'allProds',component: AllProdComponent,
-  // children: [
-  //   {path: 'mobile',component: MobPartComponent,
-  //     children: [
-  //       { path: 'moto', component: MotoComponent },
-  //       { path: 'samsung', component: SamsungComponent }
-  //     ]},
-  //   { path: 'laptop', component: LaptopComponent }
-  // ]},
-
-  //{ path: 'mobile',component: MobPartComponent,children: [{path: '',component: MobPartComponent,},{ path: 'moto', component: MotoComponent },{ path: 'samsung', component: SamsungComponent },],},
-  //{ path: 'mobile',component: MobileNavComponent,children: [{path: '',component: MobPartComponent,},{path: 'moto',component: MotoComponent,},{path: 'samsung',component: SamsungComponent,}],},
-  
-  // { path : "laptopNav", component : LaptopComponent,
-  // children:[
-  //   // {path: '',component: LaptopComponent,},
-  //   {path:"lenovo",component:LenovoComponent},
-  //   {path:"dell",component:DellComponent},
-  //   {path:"hp",component:HpComponent}
-  // ]},
-
-  //{ path: 'laptop',component: LaptopNavComponent,children: [{path: '',component: LaptopComponent,},{path:"lenovo",component:LenovoComponent},{path:"dell",component:DellComponent},{path:"hp",component:HpComponent}],},
-  
-  // { path:'iPads',component:IpadsComponent },
+      // { path: 'laptopNav',
+    //   component: LaptopNavComponent,
+    //   children:[
+    //     { path: 'laptop',
+    //     component: LaptopComponent,
+    //       children:[{ path: 'lenovo',
+    //       component: LenovoComponent,},
+    //     { path:'dell',
+    //       component: DellComponent
+    //     },
+    //     { path:'hp',
+    //       component:HpComponent}]
+    //     },
+    //     { path: 'lenovo',
+    //       component: LenovoComponent,},
+    //     { path:'dell',
+    //       component: DellComponent
+    //     },
+    //     { path:'hp',
+    //       component:HpComponent}
+    //   ],}, 
+      
 ];
 
 @NgModule({

@@ -18,6 +18,11 @@ import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.c
 import { LaptopComponent } from './products/laptop/laptop.component';
 import { MobPartComponent } from './products/mob-part/mob-part.component';
 import { AllProdComponent } from './layouts/all-prod/all-prod.component';
+import { MobileNavComponent } from './products/mob-part/mobile-nav/mobile-nav.component';
+import { LaptopNavComponent } from './products/laptop/laptop-nav/laptop-nav.component';
+import { TabPartComponent } from './products/tab-part/tab-part.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component'
+import { DashboardNavComponent } from './admin/dashboard/dashboard-nav/dashboard-nav.component';
 
 import { from } from 'rxjs';
 
@@ -28,6 +33,9 @@ import { AllComponentModule } from './modules/all-component.module';
 
 import { ServcommonService } from './services/servcommon.service';
 import { AuthGuard } from './guards/auth.guard';
+import { SuperadminComponent } from './admin/dashboard/superadmin/superadmin.component';
+import { LazyModule } from './modules/lazy/lazy.module';
+import { SuperAuthGuard } from './guards/super-auth.guard';
 
 
 
@@ -46,6 +54,12 @@ import { AuthGuard } from './guards/auth.guard';
     LaptopComponent,
     MobPartComponent,
     AllProdComponent,
+    SuperadminComponent,
+    MobileNavComponent,
+    LaptopNavComponent,
+    TabPartComponent,
+    DashboardComponent,
+    DashboardNavComponent
   ],
 
   imports: [BrowserModule, 
@@ -55,8 +69,9 @@ import { AuthGuard } from './guards/auth.guard';
     AllMaterialModule,
     AllComponentModule,
     HttpModule,
+    LazyModule,
   ],
-  providers: [ServcommonService,AuthGuard],
+  providers: [ServcommonService,AuthGuard,SuperAuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -13,4 +13,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isLogin() {
+    if (localStorage.getItem('username') != null) return true;
+    return false;
+  }
 }
