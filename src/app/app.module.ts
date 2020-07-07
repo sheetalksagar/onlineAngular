@@ -36,6 +36,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { SuperadminComponent } from './admin/dashboard/superadmin/superadmin.component';
 import { LazyModule } from './modules/lazy/lazy.module';
 import { SuperAuthGuard } from './guards/super-auth.guard';
+import { MaterialCssComponent } from './layouts/material-css/material-css.component';
 
 
 
@@ -59,7 +60,8 @@ import { SuperAuthGuard } from './guards/super-auth.guard';
     LaptopNavComponent,
     TabPartComponent,
     DashboardComponent,
-    DashboardNavComponent
+    DashboardNavComponent,
+    MaterialCssComponent
   ],
 
   imports: [BrowserModule, 

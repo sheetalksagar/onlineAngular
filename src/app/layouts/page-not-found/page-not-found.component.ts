@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <h1>
   page-not-found works!
+  <img src="./../../../assets/img/404.jpg" />
   </h1>
   `, 
   styles: [

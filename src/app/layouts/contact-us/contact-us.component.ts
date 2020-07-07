@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contact-us',
-  template: `
+  templateUrl : './contact-us.component.html'
+  /*template: `
     <div class="container">
       <div class="section">
         <div class="row">
@@ -25,7 +26,7 @@ import { Component, OnInit } from '@angular/core';
         </div>
       </div>
     </div>
-  `,
+  `*/,
   styles: [],
 })
 export class ContactUsComponent implements OnInit {

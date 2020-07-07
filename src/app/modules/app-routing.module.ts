@@ -1,3 +1,4 @@
+import { MaterialCssComponent } from './../layouts/material-css/material-css.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './../guards/auth.guard';
@@ -95,6 +96,8 @@ const appsRoutes: Routes = [
       { path:'login',component: LoginComponent },
     
       { path : 'lazy',loadChildren:'../modules/lazy/lazy.module#LazyModule'},
+
+      { path:'materialCss',component: MaterialCssComponent },
 
       { path: '**', component: PageNotFoundComponent },
 

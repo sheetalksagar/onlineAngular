@@ -9,6 +9,15 @@
             <a routerLink="dashboardNav" (click)="superlogout()">LogOut<i class="material-icons right">person_outline</i></a>
           </li> -->
       </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <ul class="right hide-on-med-and-down">
+          <li *ngIf="issuperLogin()"><a routerLink="superLogin">Super Dashboard<i class="material-icons right">dashboard</i></a></li>
+            <li *ngIf="!issuperLogin()"><a routerLink="superLogin">Login<i class="material-icons right">person</i></a></li>
+            <!-- <li *ngIf="issuperLogin()">
+              <a routerLink="dashboardNav" (click)="superlogout()">LogOut<i class="material-icons right">person_outline</i></a>
+            </li> -->
+        </ul>
+      </ul>
     </div>
   </nav>
   <router-outlet></router-outlet> 
