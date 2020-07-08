@@ -1,9 +1,18 @@
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { firebaseConfig } from './firebase/firebase-config';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { firebaseConfig } from './firebase/firebase-config';
+
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './Modules/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layouts/footer/footer.component';
@@ -37,6 +46,7 @@ import { SuperadminComponent } from './admin/dashboard/superadmin/superadmin.com
 import { LazyModule } from './modules/lazy/lazy.module';
 import { SuperAuthGuard } from './guards/super-auth.guard';
 import { MaterialCssComponent } from './layouts/material-css/material-css.component';
+import { config } from 'process';
 
 
 
@@ -72,6 +82,8 @@ import { MaterialCssComponent } from './layouts/material-css/material-css.compon
     AllComponentModule,
     HttpModule,
     LazyModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   providers: [ServcommonService,AuthGuard,SuperAuthGuard],
   bootstrap: [AppComponent],
