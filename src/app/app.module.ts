@@ -1,7 +1,3 @@
-// import { AngularFireModule } from 'angularfire2';
-// import { AngularFireDatabaseModule } from 'angularfire2/database';
-// import { firebaseConfig } from './firebase/firebase-config';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { firebaseConfig } from './firebase/firebase-config';
@@ -47,8 +43,7 @@ import { LazyModule } from './modules/lazy/lazy.module';
 import { SuperAuthGuard } from './guards/super-auth.guard';
 import { MaterialCssComponent } from './layouts/material-css/material-css.component';
 import { config } from 'process';
-
-
+import { HostDirective } from './directives/host.directive';
 
 @NgModule({
   declarations: [
@@ -71,7 +66,8 @@ import { config } from 'process';
     TabPartComponent,
     DashboardComponent,
     DashboardNavComponent,
-    MaterialCssComponent
+    MaterialCssComponent,
+    HostDirective,
   ],
 
   imports: [BrowserModule, 

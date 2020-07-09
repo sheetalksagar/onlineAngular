@@ -2,7 +2,15 @@
   <li *ngFor="let mobPart of mobParts">
     <div class="col s12 m4 cardHeight">
       <div class="card" [class.clsName]="mobPart.clsVar">
-
+        <div class="card-image">
+          <!-- <img src="{{ mobPart.prodImg }}" /> -->
+          <!-- <img [src]="mobPart.prodImg" /> -->
+          <img src="../../../assets/img/{{ mobPart.prodImg }}" />
+          <span class="card-title">{{ mobPart.name }}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"
+            ><i class="material-icons">add</i></a
+          >
+        </div>
         <div class="card-content">
           <p id="appSimpleStyle">
             Mobile Part ID : <b>{{ mobPart.id }}</b>
@@ -10,9 +18,15 @@
           <div [style.color]="mobPart.prodColor">
             Mobile Part Name :
             <b
-              ><i>{{ mobPart.name }}</i></b
+              ><i>{{ mobPart.name  }}</i></b
             >
           </div>
+          <div>
+            Description : <q>{{ mobPart.description }}</q>
+          </div>
+          <!-- <div *ngIf="mobPart.inStock === 0">
+      Out Of Stock Now...
+    </div> -->
         </div>
       </div>
     </div>
