@@ -22,6 +22,7 @@ import { SimpleStyleDirective } from './directives/simple-style.directive';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 import { LaptopComponent } from './products/laptop/laptop.component';
 import { MobPartComponent } from './products/mob-part/mob-part.component';
+import { MotoComponent } from './products/mob-part/moto/moto.component';
 import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 import { MobileNavComponent } from './products/mob-part/mobile-nav/mobile-nav.component';
 import { LaptopNavComponent } from './products/laptop/laptop-nav/laptop-nav.component';
@@ -39,11 +40,15 @@ import { AllComponentModule } from './modules/all-component.module';
 import { ServcommonService } from './services/servcommon.service';
 import { AuthGuard } from './guards/auth.guard';
 import { SuperadminComponent } from './admin/dashboard/superadmin/superadmin.component';
+import { LoginComponent } from './admin/login/login.component';
 import { LazyModule } from './modules/lazy/lazy.module';
 import { SuperAuthGuard } from './guards/super-auth.guard';
 import { MaterialCssComponent } from './layouts/material-css/material-css.component';
 import { config } from 'process';
 import { HostDirective } from './directives/host.directive';
+import { TabDetailsComponent } from './products/tab-part/tab-details/tab-details.component';
+import { TabOffersComponent } from './products/tab-part/tab-offers/tab-offers.component';
+import { HomeComponent } from './layouts/home/home.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +64,10 @@ import { HostDirective } from './directives/host.directive';
     PageNotFoundComponent,
     LaptopComponent,
     MobPartComponent,
+    MotoComponent,
     AllProdComponent,
     SuperadminComponent,
+    LoginComponent,
     MobileNavComponent,
     LaptopNavComponent,
     TabPartComponent,
@@ -68,6 +75,9 @@ import { HostDirective } from './directives/host.directive';
     DashboardNavComponent,
     MaterialCssComponent,
     HostDirective,
+    TabDetailsComponent,
+    TabOffersComponent,
+    HomeComponent
   ],
 
   imports: [BrowserModule, 
@@ -78,6 +88,7 @@ import { HostDirective } from './directives/host.directive';
     AllComponentModule,
     HttpModule,
     LazyModule,
+
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
   ],

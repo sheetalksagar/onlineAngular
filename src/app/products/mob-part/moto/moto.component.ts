@@ -1,5 +1,5 @@
 import { MobParts } from './../../mob-part/mob-parts';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({

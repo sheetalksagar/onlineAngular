@@ -17,12 +17,14 @@ import { HpComponent } from './../products/laptop/hp/hp.component';
 import { LaptopNavComponent } from './../products/laptop/laptop-nav/laptop-nav.component';
 
 import { TabPartComponent } from './../products/tab-part/tab-part.component';
-import { IpadsComponent } from './../products/tab-part/ipad/ipad.component'; 
+import { IpadsComponent } from './../products/tab-part/ipad/ipad.component';
+import { TabDetailsComponent } from './../products/tab-part/tab-details/tab-details.component';
+import { TabOffersComponent } from './../products/tab-part/tab-offers/tab-offers.component';
 
 import { AllProdComponent } from './../layouts/all-prod/all-prod.component';
 
 import { PageNotFoundComponent } from './../layouts/page-not-found/page-not-found.component';
-import { DashboardComponent } from '../admin/dashboard/dashboard.component'
+import { DashboardComponent } from '../admin/dashboard/dashboard.component';
 import { LoginComponent } from '../admin/login/login.component';
 
 import { SuperadminComponent } from '../admin/dashboard/superadmin/superadmin.component';
@@ -33,7 +35,7 @@ import { SuperAuthGuard } from '../guards/super-auth.guard';
 // const routes: Routes = [];
 const appsRoutes: Routes = [
   { path: '', component: HomeComponent },
-  
+
   {
     path: 'mobile',
     component: MobileNavComponent,
@@ -49,80 +51,95 @@ const appsRoutes: Routes = [
       },
     ],
   },
-  
-  { path: 'laptop',component: LaptopNavComponent,
-    children: [
-      { path: '', component: LaptopComponent,},
-      {path:"lenovo",component:LenovoComponent},
-      {path:"dell",component:DellComponent},
-      {path:"hp",component:HpComponent}
-    ],},
 
-      { path: 'tab', component: TabPartComponent ,
-      children:[
-        { path:'iPads',component:IpadsComponent },
-      ]},
-
-    { path: 'allProds',component: AllProdComponent,
+  {
+    path: 'laptop',
+    component: LaptopNavComponent,
     children: [
-      {path: 'mobile',component: MobPartComponent,
+      { path: '', component: LaptopComponent },
+      { path: 'lenovo', component: LenovoComponent },
+      { path: 'dell', component: DellComponent },
+      { path: 'hp', component: HpComponent },
+    ],
+  },
+
+  {
+    path: 'tab',
+    component: TabPartComponent,
+    children: [{ path: 'iPads', component: IpadsComponent }],
+  },
+
+  { path: 'tabDetails', component: TabDetailsComponent, outlet: 'outlet1' },
+  { path: 'tabOffers', component: TabOffersComponent, outlet: 'outlet2' },
+
+  {
+    path: 'allProds',
+    component: AllProdComponent,
+    children: [
+      {
+        path: 'mobile',
+        component: MobPartComponent,
         children: [
           { path: 'moto', component: MotoComponent },
-          { path: 'samsung', component: SamsungComponent }
-        ]},
-        { path: 'laptop',component: LaptopNavComponent,
-        children: [
-          { path: '', component: LaptopComponent,},
-          {path:"lenovo",component:LenovoComponent},
-          {path:"dell",component:DellComponent},
-          {path:"hp",component:HpComponent}
-        ],},
-    ]},
-
-      {
-        path: 'dashboardNav',
-        canActivate: [AuthGuard],
-        component: DashboardNavComponent,
-        children:[
-          { 
-            path:'superLogin',
-            //canActivate: [SuperAuthGuard],
-            component: SuperadminComponent
-          },
-          // { path: 'dashboard', component: DashboardComponent }
-        ]
+          { path: 'samsung', component: SamsungComponent },
+        ],
       },
+      {
+        path: 'laptop',
+        component: LaptopNavComponent,
+        children: [
+          { path: '', component: LaptopComponent },
+          { path: 'lenovo', component: LenovoComponent },
+          { path: 'dell', component: DellComponent },
+          { path: 'hp', component: HpComponent },
+        ],
+      },
+    ],
+  },
 
-      { path:'login',component: LoginComponent },
-    
-      { path : 'lazy',loadChildren:'../modules/lazy/lazy.module#LazyModule'},
+  {
+    path: 'dashboardNav',
+    canActivate: [AuthGuard],
+    component: DashboardNavComponent,
+    children: [
+      {
+        path: 'superLogin',
+        //canActivate: [SuperAuthGuard],
+        component: SuperadminComponent,
+      },
+      // { path: 'dashboard', component: DashboardComponent }
+    ],
+  },
 
-      { path:'materialCss',component: MaterialCssComponent },
+  { path: 'login', component: LoginComponent },
 
-      { path: '**', component: PageNotFoundComponent },
+  { path: 'lazy', loadChildren: '../modules/lazy/lazy.module#LazyModule' },
 
-      // { path: 'laptopNav',
-    //   component: LaptopNavComponent,
-    //   children:[
-    //     { path: 'laptop',
-    //     component: LaptopComponent,
-    //       children:[{ path: 'lenovo',
-    //       component: LenovoComponent,},
-    //     { path:'dell',
-    //       component: DellComponent
-    //     },
-    //     { path:'hp',
-    //       component:HpComponent}]
-    //     },
-    //     { path: 'lenovo',
-    //       component: LenovoComponent,},
-    //     { path:'dell',
-    //       component: DellComponent
-    //     },
-    //     { path:'hp',
-    //       component:HpComponent}
-    //   ],}, 
-      
+  { path: 'materialCss', component: MaterialCssComponent },
+
+  { path: '**', component: PageNotFoundComponent },
+
+  // { path: 'laptopNav',
+  //   component: LaptopNavComponent,
+  //   children:[
+  //     { path: 'laptop',
+  //     component: LaptopComponent,
+  //       children:[{ path: 'lenovo',
+  //       component: LenovoComponent,},
+  //     { path:'dell',
+  //       component: DellComponent
+  //     },
+  //     { path:'hp',
+  //       component:HpComponent}]
+  //     },
+  //     { path: 'lenovo',
+  //       component: LenovoComponent,},
+  //     { path:'dell',
+  //       component: DellComponent
+  //     },
+  //     { path:'hp',
+  //       component:HpComponent}
+  //   ],},
 ];
 
 @NgModule({

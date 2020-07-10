@@ -18,15 +18,17 @@
           <div [style.color]="mobPart.prodColor">
             Mobile Part Name :
             <b
-              ><i>{{ mobPart.name  }}</i></b
+              ><i>{{ mobPart.name | uppercase }}</i></b
             >
           </div>
           <div>
             Description : <q>{{ mobPart.description }}</q>
           </div>
-          <!-- <div *ngIf="mobPart.inStock === 0">
-      Out Of Stock Now...
-    </div> -->
+         
+          <div>
+            <p>Price : {{ mobPart.price | currency: "INR" }}</p>
+          </div>
+
         </div>
       </div>
     </div>

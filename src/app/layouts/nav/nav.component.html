@@ -1,39 +1,107 @@
-<div class="navbar">        <!--<div class="navbar-fixed" ></div>-->
-<nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">First App</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="">Home<i class="material-icons right">home</i></a></li>
-          <li><a routerLink="/mobile">Mobiles<i class="material-icons right">phone_android</i></a></li>
-          <li><a routerLink="laptop">Laptops<i class="material-icons right">laptop</i></a></li>
-          <!-- <li><a routerLink="/laptopNav">Laptops Nav<i class="material-icons right">more</i></a></li> -->
-          <li><a routerLink="tab">Tabs<i class="material-icons right">tablet_android</i></a></li>
-          <li *ngIf="isLogin()"><a routerLink="dashboardNav">Dashboard<i class="material-icons right">dashboard</i></a></li>
-          <li *ngIf="!isLogin()"><a routerLink="login">Login<i class="material-icons right">person</i></a></li>
-          <li *ngIf="isLogin()">
-            <a routerLink="mobile" (click)="logout()">LogOut<i class="material-icons right">person_outline</i></a>
+<div class="navbar">
+  <!--<div class="navbar-fixed" ></div>-->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">First App</a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a href="">Home<i class="material-icons right">home</i></a>
+        </li>
+        <li>
+          <a routerLink="/mobile">Mobiles<i class="material-icons right">phone_android</i></a>
+        </li>
+        <li>
+          <a routerLink="laptop">Laptops<i class="material-icons right">laptop</i></a>
+        </li>
+        <!-- <li><a routerLink="/laptopNav">Laptops Nav<i class="material-icons right">more</i></a></li> -->
+
+        <!-- <li><a routerLink="tab">Tabs<i class="material-icons right">tablet_android</i></a></li>
+          <li><a [routerLink]="[{outlets : {outlet1:['tabDetails']}}]">T Details</a></li>
+          <li><a [routerLink]="[{outlets : {outlet2:['tabOffers']}}]">T Offers</a></li>
+           -->
+        <!-- Dropdown Trigger -->
+        <li>
+          <a
+            class="dropdown-trigger btn"
+            routerLink="tab"
+            data-target="dropdown1"
+            >Tabs<i class="material-icons right">tablet_android</i></a
+          >
+        </li>
+
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li>
+            <a [routerLink]="[{ outlets: { outlet1: ['tabDetails'] } }]"
+              >T Details</a
+            >
           </li>
-          <li><a routerLink="/lazy/lazy-child">Lazy</a></li>
-          <li><a routerLink="materialCss">Material CSS</a></li>
-          
-        </ul>
-    
-        <ul id="nav-mobile" class="sidenav">
-          <li><a href="">Home<i class="material-icons right">home</i></a></li>
-          <li><a routerLink="/mobile">Mobiles<i class="material-icons right">phone_android</i></a></li>
-          <li><a routerLink="laptop">Laptops<i class="material-icons right">laptop</i></a></li>
-          <!-- <li><a routerLink="/laptopNav">Laptops Nav<i class="material-icons right">more</i></a></li> -->
-          <li><a routerLink="tab">Tabs<i class="material-icons right">tablet_android</i></a></li>
-          <li *ngIf="isLogin()"><a routerLink="dashboardNav">Dashboard<i class="material-icons right">dashboard</i></a></li>
-          <li *ngIf="!isLogin()"><a routerLink="login">Login<i class="material-icons right">person</i></a></li>
-          <li *ngIf="isLogin()">
-            <a routerLink="mobile" (click)="logout()">LogOut<i class="material-icons right">person_outline</i></a>
+          <li>
+            <a [routerLink]="[{ outlets: { outlet2: ['tabOffers'] } }]"
+              >T Offers</a
+            >
           </li>
-          <li><a routerLink="/lazy/lazy-child">Lazy</a></li>
         </ul>
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
-      </div>
-    </nav>
-  </div>
+
+        <li *ngIf="isLogin()">
+          <a routerLink="dashboardNav"
+            >Dashboard<i class="material-icons right">dashboard</i></a
+          >
+        </li>
+        <li *ngIf="!isLogin()">
+          <a routerLink="login"
+            >Login<i class="material-icons right">person</i></a
+          >
+        </li>
+        <li *ngIf="isLogin()">
+          <a routerLink="mobile" (click)="logout()"
+            >LogOut<i class="material-icons right">person_outline</i></a
+          >
+        </li>
+        <li><a routerLink="/lazy/lazy-child">Lazy</a></li>
+        <li><a routerLink="materialCss">Material CSS</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li>
+          <a href="">Home<i class="material-icons right">home</i></a>
+        </li>
+        <li>
+          <a routerLink="/mobile"
+            >Mobiles<i class="material-icons right">phone_android</i></a
+          >
+        </li>
+        <li>
+          <a routerLink="laptop"
+            >Laptops<i class="material-icons right">laptop</i></a
+          >
+        </li>
+        <!-- <li><a routerLink="/laptopNav">Laptops Nav<i class="material-icons right">more</i></a></li> -->
+        <li>
+          <a routerLink="tab"
+            >Tabs<i class="material-icons right">tablet_android</i></a
+          >
+        </li>
+        <li *ngIf="isLogin()">
+          <a routerLink="dashboardNav"
+            >Dashboard<i class="material-icons right">dashboard</i></a
+          >
+        </li>
+        <li *ngIf="!isLogin()">
+          <a routerLink="login"
+            >Login<i class="material-icons right">person</i></a
+          >
+        </li>
+        <li *ngIf="isLogin()">
+          <a routerLink="mobile" (click)="logout()"
+            >LogOut<i class="material-icons right">person_outline</i></a
+          >
+        </li>
+        <li><a routerLink="/lazy/lazy-child">Lazy</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      >
+    </div>
+  </nav>
+</div>
