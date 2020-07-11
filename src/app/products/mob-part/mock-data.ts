@@ -19,7 +19,7 @@ export const MOBPARTS: MobParts[] = [
   {
     id: 1002,
     name: 'SCREEN 5',
-    description: '5 Screen for Samsung',
+    description: 'Samsung',
     inStock: 80,
     prodColor: 'green',
     canPurch: false,

@@ -1,7 +1,10 @@
+<h2 style="text-align: center;"><mark>Data Fetch using AngularFireDatabase</mark></h2>
 <div>
   <ul>
     <li *ngFor="let mobPart of mobParts">
       <div class="col s12 m4">
+        <div><h1> Last <mark>{{ mobPart.inStock }}</mark> Parts Available in stock
+          now...</h1></div>
         <div class="card" style="border:2px dotted" [class.clsName]="mobPart.clsVar">
           <div class="card-image">
             <img class="materialboxed" src="../../../../assets/img/{{ mobPart.prodImg }}" />

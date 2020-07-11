@@ -24,6 +24,7 @@ import { MaterialCssComponent } from './layouts/material-css/material-css.compon
 import { MobPartComponent } from './products/mob-part/mob-part.component';
 import { MobileNavComponent } from './products/mob-part/mobile-nav/mobile-nav.component';
 import { MotoComponent } from './products/mob-part/moto/moto.component';
+import { SamsungComponent } from './products/mob-part/samsung/samsung.component';
 
 import { LaptopComponent } from './products/laptop/laptop.component';
 import { LaptopNavComponent } from './products/laptop/laptop-nav/laptop-nav.component';
@@ -68,6 +69,7 @@ import { from } from 'rxjs';
     LaptopComponent,
     MobPartComponent,
     MotoComponent,
+    SamsungComponent,
     AllProdComponent,
     SuperadminComponent,
     MobileNavComponent,

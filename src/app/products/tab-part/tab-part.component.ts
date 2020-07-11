@@ -1,4 +1,7 @@
+import { TABPARTS } from './tabMock-data';
 import { Component, OnInit } from '@angular/core';
+import { TabParts } from './tab-parts';
+
 
 @Component({
   selector: 'app-tab-part',
@@ -8,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabPartComponent implements OnInit {
 
+  tabParts : TabParts[] = TABPARTS;
   constructor() { }
 
   ngOnInit(): void {
