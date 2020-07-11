@@ -1,20 +1,49 @@
-<ul>
-  <li *ngFor="let mobPart of mobParts">
-    <div class="col s12 m4 cardHeight">
-      <div class="card" [class.clsName]="mobPart.clsVar">
-
-        <div class="card-content">
-          <p id="appSimpleStyle">
-            Mobile Part ID : <b>{{ mobPart.id }}</b>
-          </p>
-          <div [style.color]="mobPart.prodColor">
-            Mobile Part Name :
-            <b
-              ><i>{{ mobPart.name }}</i></b
-            >
+<div>
+  <ul>
+    <li *ngFor="let mobPart of mobParts">
+      <div class="col s12 m4">
+        <div class="card" style="border:2px dotted" [class.clsName]="mobPart.clsVar">
+          <div class="card-image">
+            <img class="materialboxed" src="../../../../assets/img/{{ mobPart.prodImg }}" />
+            <span class="card-title" style="color: rgba(241, 245, 10, 0.959);"><h3>{{ mobPart.name | uppercase }}</h3></span>
+            <hr style="border: 1px solid gray;">
           </div>
+          <div class="card-content">
+            <p id="appSimpleStyle">
+              Mobile Part ID : <b>{{ mobPart.id }}</b>
+            </p>
+            <div [style.color]="mobPart.prodColor">
+              Mobile Part Name :
+              <b><i>{{ mobPart.name | uppercase }}</i></b>
+            </div>
+            <div>
+              Description : <q>{{ mobPart.description }}</q>
+            </div>
+
+            <div>
+              <p>Price : {{ mobPart.price | currency: "INR" }}</p>
+            </div>
+
+            <div>
+              <p>Available parts : 
+              <ng-container
+                *ngIf="mobPart.inStock != 0; then stockVal; else outOfStock"
+              >
+              </ng-container>
+
+              <ng-template #stockVal>
+                Last <mark>{{ mobPart.inStock }}</mark> Parts Available in stock
+                now...
+              </ng-template>
+
+              <ng-template #outOfStock>
+                Out Of Stock!
+              </ng-template>
+            </p>
+            </div>
+            </div>
         </div>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>

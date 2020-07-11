@@ -1,2 +1,20 @@
-<p>Dashboard!</p>
-
+<!-- <a class="waves-effect waves-light btn-large" routerLink="dashNav" style="margin-right: 15px;">Dashboard Navigation</a> -->
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Dashboard</a>
+    <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/tab">Tabs<i class="material-icons right">tablet_android</i></a></li>
+        
+        <li *ngIf="issuperLogin()">
+            <a routerLink="dashboardNav">Dashboard Nav<i class="material-icons right">dashboard</i></a>
+        </li>
+        <li *ngIf="!issuperLogin()">
+            <a routerLink="superLogin">Super Login<i class="material-icons right">person</i></a>
+        </li>
+        <li *ngIf="issuperLogin()">
+            <a routerLink="dashboardNav" (click)="superlogout()">Super LogOut<i class="material-icons right">person_outline</i></a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

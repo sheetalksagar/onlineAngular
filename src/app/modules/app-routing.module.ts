@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './../guards/auth.guard';
 
 import { HomeComponent } from './../layouts/home/home.component';
-
 import { MobPartComponent } from './../products/mob-part/mob-part.component';
 import { MotoComponent } from './../products/mob-part/moto/moto.component';
 import { SamsungComponent } from './../products/mob-part/samsung/samsung.component';
@@ -18,16 +17,19 @@ import { LaptopNavComponent } from './../products/laptop/laptop-nav/laptop-nav.c
 
 import { TabPartComponent } from './../products/tab-part/tab-part.component';
 import { IpadsComponent } from './../products/tab-part/ipad/ipad.component'; 
+import { TabDetailsComponent } from './../products/tab-part/tab-details/tab-details.component';
+import { TabOffersComponent } from './../products/tab-part/tab-offers/tab-offers.component';
 
 import { AllProdComponent } from './../layouts/all-prod/all-prod.component';
 
 import { PageNotFoundComponent } from './../layouts/page-not-found/page-not-found.component';
-import { DashboardComponent } from '../admin/dashboard/dashboard.component'
-import { LoginComponent } from '../admin/login/login.component';
 
+import { DashboardComponent } from '../admin/dashboard/dashboard.component'
+import { DashboardNavComponent } from '../admin/dashboard/dashboard-nav/dashboard-nav.component';
+
+import { LoginComponent } from '../admin/login/login.component';
 import { SuperadminComponent } from '../admin/dashboard/superadmin/superadmin.component';
 
-import { DashboardNavComponent } from '../admin/dashboard/dashboard-nav/dashboard-nav.component';
 import { SuperAuthGuard } from '../guards/super-auth.guard';
 
 // const routes: Routes = [];
@@ -63,6 +65,9 @@ const appsRoutes: Routes = [
         { path:'iPads',component:IpadsComponent },
       ]},
 
+      { path: 'tabDetails', component: TabDetailsComponent, outlet: 'outlet1' },
+      { path: 'tabOffers', component: TabOffersComponent, outlet: 'outlet2' },
+
     { path: 'allProds',component: AllProdComponent,
     children: [
       {path: 'mobile',component: MobPartComponent,
@@ -80,26 +85,41 @@ const appsRoutes: Routes = [
     ]},
 
       {
-        path: 'dashboardNav',
+        path: 'dashboard',
         canActivate: [AuthGuard],
-        component: DashboardNavComponent,
+        component: DashboardComponent,
         children:[
           { 
-            path:'superLogin',
-            //canActivate: [SuperAuthGuard],
-            component: SuperadminComponent
+            path:'dashboardNav',
+            canActivate: [SuperAuthGuard],
+            component: DashboardNavComponent
           },
-          // { path: 'dashboard', component: DashboardComponent }
         ]
       },
 
       { path:'login',component: LoginComponent },
+
+      { path: 'superLogin', component: SuperadminComponent },
     
       { path : 'lazy',loadChildren:'../modules/lazy/lazy.module#LazyModule'},
 
       { path:'materialCss',component: MaterialCssComponent },
 
       { path: '**', component: PageNotFoundComponent },
+
+      // {
+      //   path: 'dashboardNav',
+      //   canActivate: [AuthGuard],
+      //   component: DashboardNavComponent,
+      //   children:[
+      //     { 
+      //       path:'superLogin',
+      //       //canActivate: [SuperAuthGuard],
+      //       component: SuperadminComponent
+      //     },
+      //     // { path: 'dashboard', component: DashboardComponent }
+      //   ]
+      // },
 
       // { path: 'laptopNav',
     //   component: LaptopNavComponent,

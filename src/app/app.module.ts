@@ -28,6 +28,7 @@ import { LaptopComponent } from './products/laptop/laptop.component';
 import { MobPartComponent } from './products/mob-part/mob-part.component';
 import { AllProdComponent } from './layouts/all-prod/all-prod.component';
 import { MobileNavComponent } from './products/mob-part/mobile-nav/mobile-nav.component';
+import { MotoComponent } from './products/mob-part/moto/moto.component';
 import { LaptopNavComponent } from './products/laptop/laptop-nav/laptop-nav.component';
 import { TabPartComponent } from './products/tab-part/tab-part.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component'
@@ -48,6 +49,9 @@ import { SuperAuthGuard } from './guards/super-auth.guard';
 import { MaterialCssComponent } from './layouts/material-css/material-css.component';
 import { config } from 'process';
 
+import { HostDirective } from './directives/host.directive';
+import { TabDetailsComponent } from './products/tab-part/tab-details/tab-details.component';
+import { TabOffersComponent } from './products/tab-part/tab-offers/tab-offers.component';
 
 
 @NgModule({
@@ -64,6 +68,7 @@ import { config } from 'process';
     PageNotFoundComponent,
     LaptopComponent,
     MobPartComponent,
+    MotoComponent,
     AllProdComponent,
     SuperadminComponent,
     MobileNavComponent,
@@ -71,7 +76,10 @@ import { config } from 'process';
     TabPartComponent,
     DashboardComponent,
     DashboardNavComponent,
-    MaterialCssComponent
+    MaterialCssComponent,
+    HostDirective,
+    TabDetailsComponent,
+    TabOffersComponent
   ],
 
   imports: [BrowserModule, 

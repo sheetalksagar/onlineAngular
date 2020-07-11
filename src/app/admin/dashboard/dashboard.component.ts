@@ -12,8 +12,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  superlogout(){
+    localStorage.removeItem('username');
+  }
 
-  isLogin() {
+  issuperLogin() {
+    //localStorage.removeItem('username');
     if (localStorage.getItem('username') != null) return true;
     return false;
   }
