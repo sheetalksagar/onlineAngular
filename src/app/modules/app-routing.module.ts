@@ -98,18 +98,18 @@ const appsRoutes: Routes = [
   },
 
   {
-    path: 'dashboardNav',
+    path: 'dashboard',
     canActivate: [AuthGuard],
-    component: DashboardNavComponent,
+    component: DashboardComponent,
     children: [
-      {
-        path: 'superLogin',
-        //canActivate: [SuperAuthGuard],
-        component: SuperadminComponent,
-      },
-      // { path: 'dashboard', component: DashboardComponent }
-    ],
+          {
+            path: 'dashboardNav',
+            canActivate: [SuperAuthGuard],
+            component: DashboardNavComponent,
+          }]
   },
+  
+  { path: 'superLogin', component: SuperadminComponent },
 
   { path: 'login', component: LoginComponent },
 
@@ -118,6 +118,21 @@ const appsRoutes: Routes = [
   { path: 'materialCss', component: MaterialCssComponent },
 
   { path: '**', component: PageNotFoundComponent },
+
+  // {
+  //   path: 'dashboardNav',
+  //   canActivate: [AuthGuard],
+  //   component: DashboardNavComponent,
+  //   children: [
+  //     {
+  //       path: 'superLogin',
+  //       //canActivate: [SuperAuthGuard],
+  //       component: SuperadminComponent,
+  //     },
+  //     // { path: 'dashboard', component: DashboardComponent }
+  //   ],
+  // },
+
 
   // { path: 'laptopNav',
   //   component: LaptopNavComponent,

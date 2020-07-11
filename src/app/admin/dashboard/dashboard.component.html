@@ -1,2 +1,17 @@
-<p>Dashboard!</p>
-
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Dashboard</a>
+      <ul class="right hide-on-med-and-down">
+        <li *ngIf="isSuperLogin()"><a routerLink="dashboardNav">Dashboard Nav
+          <i class="material-icons right">dashboard</i></a>
+        </li>
+        <li *ngIf="!isSuperLogin()"><a routerLink="superLogin">Super Login
+          <i class="material-icons right">person</i></a>
+        </li>
+        <li *ngIf="isSuperLogin()"><a routerLink="dashboardNav" (click)="isSuperLogout()">Super LogOut
+          <i class="material-icons right">person_outline</i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet> 

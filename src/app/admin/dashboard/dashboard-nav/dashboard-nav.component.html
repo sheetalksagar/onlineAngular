@@ -1,23 +1,19 @@
+<h1>Dashboard Nav</h1>
 <!-- <a class="waves-effect waves-light btn-large" routerLink="dashNav" style="margin-right: 15px;">Dashboard Navigation</a> -->
-<nav class="white" role="navigation">
+<!-- <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
-        <li *ngIf="issuperLogin()"><a routerLink="superLogin">Super Dashboard<i class="material-icons right">dashboard</i></a></li>
-          <li *ngIf="!issuperLogin()"><a routerLink="superLogin">Login<i class="material-icons right">person</i></a></li>
-          <!-- <li *ngIf="issuperLogin()">
-            <a routerLink="dashboardNav" (click)="superlogout()">LogOut<i class="material-icons right">person_outline</i></a>
-          </li> -->
-      </ul>
-      <ul id="nav-mobile" class="sidenav">
-        <ul class="right hide-on-med-and-down">
-          <li *ngIf="issuperLogin()"><a routerLink="superLogin">Super Dashboard<i class="material-icons right">dashboard</i></a></li>
-            <li *ngIf="!issuperLogin()"><a routerLink="superLogin">Login<i class="material-icons right">person</i></a></li>
-            <!-- <li *ngIf="issuperLogin()">
-              <a routerLink="dashboardNav" (click)="superlogout()">LogOut<i class="material-icons right">person_outline</i></a>
-            </li> -->
-        </ul>
+        <li *ngIf="isLogin()"><a routerLink="dashboard">Dashboard
+          <i class="material-icons right">dashboard</i></a>
+        </li>
+        <li *ngIf="!isLogin()"><a routerLink="login">Login
+          <i class="material-icons right">person</i></a>
+        </li>
+        <li *ngIf="isLogin()"><a routerLink="mobile" (click)="logout()">LogOut
+          <i class="material-icons right">person_outline</i></a>
+        </li>
       </ul>
     </div>
   </nav>
-  <router-outlet></router-outlet> 
+  <router-outlet></router-outlet>  -->
