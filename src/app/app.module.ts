@@ -10,6 +10,7 @@ import { AppRoutingModule } from './Modules/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './layouts/home/home.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { BannerThreeComponent } from './layouts/banner-three/banner-three.component';
 import { ContactUsComponent } from './layouts/contact-us/contact-us.component';
@@ -57,6 +58,7 @@ import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     FooterComponent,
     BannerThreeComponent,
     ContactUsComponent,
