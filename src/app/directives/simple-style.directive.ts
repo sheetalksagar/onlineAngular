@@ -1,16 +1,10 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '.appSimpleStyle',
+  selector: '[appSimpleStyle]',
 })
 export class SimpleStyleDirective {
   constructor(private elementRef: ElementRef) {
-    elementRef.nativeElement.style.backgroundColor  = 'red';
+    elementRef.nativeElement.style.backgroundColor = 'yellow';
   }
 } 
-
-// @Directive({})
-
-// Obj types :  new 4, 3
-
-// document.getEBId('appSimpleStyle).style.color="hotpink"

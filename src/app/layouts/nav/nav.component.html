@@ -13,8 +13,8 @@
 
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-          <li><a [routerLink]="[{ outlets: { outlet1: ['tabDetails'] } }]">T Details</a></li>
-          <li><a [routerLink]="[{ outlets: { outlet2: ['tabOffers'] } }]">T Offers</a></li>
+          <li><a [routerLink]="[{ outlets: { outlet1: ['tabDetails'] } }]">Tabs Details</a></li>
+          <li><a [routerLink]="[{ outlets: { outlet2: ['tabOffers'] } }]">Tabs Offers</a></li>
         </ul>
           <li *ngIf="isLogin()"><a routerLink="dashboard">Dashboard<i class="material-icons right">dashboard</i></a></li>
           <li *ngIf="!isLogin()"><a routerLink="login">Login<i class="material-icons right">person</i></a></li>
