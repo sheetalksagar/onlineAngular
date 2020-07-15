@@ -27,3 +27,20 @@
       </li>
     </ul>
   </div>
+  <table class="highlight" >
+    <thead>
+      <tr>
+          <th>Mobile Part ID</th>
+          <th>Mobile Part Name</th>
+          <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let tabPart of tabParts">
+      <tr >
+        <td>{{ tabPart.id }}</td>
+        <td>{{ tabPart.name | uppercase }}</td>
+        <td>{{ tabPart.description }}</td>
+      </tr>
+    </tbody>
+  </table>

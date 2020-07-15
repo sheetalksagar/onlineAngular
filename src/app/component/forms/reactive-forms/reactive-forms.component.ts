@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-reactive-forms',
+  selector: 'app-reactive-forms', 
   templateUrl: './reactive-forms.component.html',
-  styles: [
-  ]
 })
-export class ReactiveFormsComponent implements OnInit {
+export class ReactiveFormsComponent{
+  formObj = new FormGroup({
+    userName: new FormControl('', Validators.required),
+    uNameGet : new FormControl('',[Validators.required,Validators.minLength(4)]),
+    uPass: new FormControl('', Validators.required),
+  });
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get uNameG() {
+    return this.formObj.get('uNameGet');
   }
-
 }

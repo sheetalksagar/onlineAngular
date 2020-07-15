@@ -5,7 +5,7 @@ import { firebaseConfig } from './firebase/firebase-config';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './Modules/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -100,6 +100,7 @@ import { ReactiveFormsComponent } from './component/forms/reactive-forms/reactiv
     LazyModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    ReactiveFormsModule,
   ],
   providers: [ServcommonService,AuthGuard,SuperAuthGuard],
   bootstrap: [AppComponent],

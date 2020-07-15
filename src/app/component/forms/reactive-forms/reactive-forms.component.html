@@ -1,1 +1,42 @@
-<p>reactive-forms works!</p>
+<h1>Reactive-forms works!</h1>
+
+<form [formGroup]="formObj">
+    <div class="input-field col s12">
+        <label>Name</label>
+        <input type="text" formControlName="userName"/>
+
+        <div
+        style="color: red;"
+        *ngIf="formObj.get('userName').touched && formObj.get('userName').invalid"
+      >
+        Error...!
+      </div>
+    </div>
+
+    <div class="input-field col s12">
+        <label>Name by get</label>
+        <input type="text" formControlName="uNameGet"/>
+
+        <div
+        style="color: red;"
+        *ngIf="uNameG.touched && uNameG.invalid"
+      >
+        Error in get name...!
+        <div *ngIf="uNameG.errors.required">Reuired...</div>
+        <div *ngIf="uNameG.errors.minlength">
+          Min {{ uNameG.errors.minlength.requiredLength }} Length
+        </div>
+      </div>
+    </div>
+
+    <div class="input-field col s12">
+        <label>Password</label>
+        <input type="password" formControlName="uPass"/>
+        <div
+        style="color: red;"
+        *ngIf="formObj.get('uPass').touched && formObj.get('uPass').invalid"
+      >
+        Password Error...!
+      </div>
+    </div>
+</form>
