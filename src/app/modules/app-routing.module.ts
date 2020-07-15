@@ -32,6 +32,10 @@ import { SuperadminComponent } from '../admin/dashboard/superadmin/superadmin.co
 
 import { SuperAuthGuard } from '../guards/super-auth.guard';
 
+import { TemplateFormsComponent } from './../component/forms/template-forms/template-forms.component';
+import { ReactiveFormsComponent } from './../component/forms/reactive-forms/reactive-forms.component';
+
+
 // const routes: Routes = [];
 const appsRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -96,6 +100,10 @@ const appsRoutes: Routes = [
           },
         ]
       },
+
+      {path:"tempForm",component:TemplateFormsComponent},
+
+      {path:"reactForm",component:ReactiveFormsComponent},
 
       { path:'login',component: LoginComponent },
 

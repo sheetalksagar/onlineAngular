@@ -53,6 +53,9 @@ import { HostDirective } from './directives/host.directive';
 
 import { config } from 'process';
 import { from } from 'rxjs';
+
+import { TemplateFormsComponent } from './component/forms/template-forms/template-forms.component';
+import { ReactiveFormsComponent } from './component/forms/reactive-forms/reactive-forms.component';
 //import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
@@ -82,7 +85,9 @@ import { from } from 'rxjs';
     MaterialCssComponent,
     HostDirective,
     TabDetailsComponent,
-    TabOffersComponent
+    TabOffersComponent,
+    TemplateFormsComponent,
+    ReactiveFormsComponent
   ],
 
   imports: [BrowserModule, 
