@@ -34,6 +34,7 @@ import { SuperAuthGuard } from '../guards/super-auth.guard';
 
 import { TemplateFormsComponent } from './../component/forms/template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './../component/forms/reactive-forms/reactive-forms.component';
+import { ProductViewComponent } from './../products/product-view/product-view.component';
 
 
 // const routes: Routes = [];
@@ -100,6 +101,8 @@ const appsRoutes: Routes = [
           },
         ]
       },
+
+      { path: 'product-view/:prodObj', component: ProductViewComponent },
 
       {path:"tempForm",component:TemplateFormsComponent},
 

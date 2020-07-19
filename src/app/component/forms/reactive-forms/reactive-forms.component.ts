@@ -1,5 +1,6 @@
-import { Component} from '@angular/core';
+import { Component} from '@angular/core'; 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsernameValidators } from './../../../validators/username.validators';
 
 @Component({
   selector: 'app-reactive-forms', 
@@ -7,12 +8,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ReactiveFormsComponent{
   formObj = new FormGroup({
-    userName: new FormControl('', Validators.required),
+    uN: new FormControl('', Validators.required),
+    
+    userName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+      UsernameValidators.noSpace,
+    ]),
+
     uNameGet : new FormControl('',[Validators.required,Validators.minLength(4)]),
     uPass: new FormControl('', Validators.required),
   });
 
   get uNameG() {
     return this.formObj.get('uNameGet');
+  }
+
+  get uNG() {
+    return this.formObj.get('userName');
   }
 }

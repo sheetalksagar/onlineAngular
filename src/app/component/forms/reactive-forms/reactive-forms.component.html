@@ -3,13 +3,27 @@
 <form [formGroup]="formObj">
     <div class="input-field col s12">
         <label>Name</label>
-        <input type="text" formControlName="userName"/>
+        <input type="text" formControlName="uN"/>
 
         <div
         style="color: red;"
-        *ngIf="formObj.get('userName').touched && formObj.get('userName').invalid"
+        *ngIf="formObj.get('uN').touched && formObj.get('uN').invalid"
       >
         Error...!
+      </div>
+    </div>
+
+    <div class="input-field col s12">
+      <label>Name Reuired noSpace</label>
+      <input type="text" formControlName="userName" />
+  
+      <div style="color: red;" *ngIf="uNG.touched && uNG.invalid">
+        Error...!
+        <div *ngIf="uNG.errors.required">Reuired...</div>
+        <div *ngIf="uNG.errors.noSpace">noSpace...</div>
+        <div *ngIf="uNG.errors.minlength">
+          Min {{ uNG.errors.minlength.requiredLength }} Length
+        </div>
       </div>
     </div>
 
@@ -23,6 +37,7 @@
       >
         Error in get name...!
         <div *ngIf="uNameG.errors.required">Reuired...</div>
+        <!-- <div *ngIf="uNameG.errors.noSpace">noSpace...</div> -->
         <div *ngIf="uNameG.errors.minlength">
           Min {{ uNameG.errors.minlength.requiredLength }} Length
         </div>

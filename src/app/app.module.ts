@@ -56,6 +56,10 @@ import { from } from 'rxjs';
 
 import { TemplateFormsComponent } from './component/forms/template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './component/forms/reactive-forms/reactive-forms.component';
+
+import { ChildComponent } from './component/child/child.component';
+import { ParentsComponent } from './component/parents/parents.component';
+import { ProductViewComponent } from './products/product-view/product-view.component';
 //import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
@@ -87,7 +91,10 @@ import { ReactiveFormsComponent } from './component/forms/reactive-forms/reactiv
     TabDetailsComponent,
     TabOffersComponent,
     TemplateFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ChildComponent,
+    ParentsComponent,
+    ProductViewComponent
   ],
 
   imports: [BrowserModule, 
