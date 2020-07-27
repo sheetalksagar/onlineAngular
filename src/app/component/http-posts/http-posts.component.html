@@ -1,0 +1,13 @@
+<p>http-posts works!</p>
+<form>
+    <div class="input-field">
+      <label>New Post</label>
+      <input type="text" #newTitle (keyup.enter)="createPost(newTitle)" />
+    </div>
+  </form>
+<table>
+    <tr *ngFor="let post of posts">
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+    </tr>
+  </table>

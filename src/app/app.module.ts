@@ -60,6 +60,7 @@ import { ReactiveFormsComponent } from './component/forms/reactive-forms/reactiv
 import { ChildComponent } from './component/child/child.component';
 import { ParentsComponent } from './component/parents/parents.component';
 import { ProductViewComponent } from './products/product-view/product-view.component';
+import { HttpPostsComponent } from './component/http-posts/http-posts.component';
 //import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
@@ -94,7 +95,8 @@ import { ProductViewComponent } from './products/product-view/product-view.compo
     ReactiveFormsComponent,
     ChildComponent,
     ParentsComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    HttpPostsComponent
   ],
 
   imports: [BrowserModule, 
@@ -110,6 +112,7 @@ import { ProductViewComponent } from './products/product-view/product-view.compo
     ReactiveFormsModule,
   ],
   providers: [ServcommonService,AuthGuard,SuperAuthGuard],
-  bootstrap: [AppComponent],
+  //bootstrap: [AppComponent],
+  bootstrap: [HttpPostsComponent],
 })
 export class AppModule {}
