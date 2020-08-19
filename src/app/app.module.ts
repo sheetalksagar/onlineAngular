@@ -112,7 +112,7 @@ import { HttpPostsComponent } from './component/http-posts/http-posts.component'
     ReactiveFormsModule,
   ],
   providers: [ServcommonService,AuthGuard,SuperAuthGuard],
-  //bootstrap: [AppComponent],
-  bootstrap: [HttpPostsComponent],
+  bootstrap: [AppComponent],
+  //bootstrap: [HttpPostsComponent],
 })
 export class AppModule {}
